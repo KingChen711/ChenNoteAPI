@@ -28,7 +28,7 @@ connectDB()
 
 app.use(express.json())
 app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", 'https://king-chen-note.netlify.app/');
+  res.setHeader("Access-Control-Allow-Origin", 'https://king-chen-note.netlify.app');
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, POST ,DELETE, OPTIONS');
   res.setHeader("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
