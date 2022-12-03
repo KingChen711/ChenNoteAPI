@@ -5,10 +5,7 @@ const verifyToken = require('../middleware/auth.js');
 
 
 const Note = require('../models/Note.js');
-
 const User = require('../models/User.js');
-
-
 
 
 router.get("/", verifyToken, async (req, res) => {
@@ -22,8 +19,6 @@ router.get("/", verifyToken, async (req, res) => {
     res.status(500).json({ success: false, message: "Internal Server Error" })
   }
 })
-
-
 
 
 router.post('/', verifyToken, async (req, res) => {
@@ -45,6 +40,7 @@ router.post('/', verifyToken, async (req, res) => {
     res.status(500).json({ success: false, message: "Internal Server Error" })
   }
 })
+
 
 router.put("/:noteId", verifyToken, async (req, res) => {
   const { title, content } = req.body;
@@ -68,8 +64,8 @@ router.put("/:noteId", verifyToken, async (req, res) => {
     console.log(err);
     res.status(500).json({ success: false, message: "Internal Server Error" })
   }
-
 })
+
 
 router.delete("/:noteId", verifyToken, async (req, res) => {
 
@@ -86,8 +82,6 @@ router.delete("/:noteId", verifyToken, async (req, res) => {
   }
 
 })
-
-
 
 
 module.exports = router;

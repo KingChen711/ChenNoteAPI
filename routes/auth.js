@@ -9,8 +9,6 @@ const User = require('../models/User.js');
 
 router.post('/register', async (req, res) => {
   const { username, password, confirmPassword } = req.body;
-
-
   //Simple Validation
   if (!username || !password || !confirmPassword) {
     return res.status(400).json({ success: false, message: "Missing username and/or password and/or confirm password" });
@@ -38,6 +36,7 @@ router.post('/register', async (req, res) => {
     res.status(500).json({ success: false, message: "Internal Server Error" })
   }
 });
+
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
