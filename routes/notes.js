@@ -34,7 +34,7 @@ router.post('/', verifyToken, async (req, res) => {
     })
 
     await newNote.save();
-    res.json({ success: true, message: "Note is saved successfully" });
+    res.json({ success: true, message: "Note is saved successfully", newNote });
   } catch (err) {
     console.log(err);
     res.status(500).json({ success: false, message: "Internal Server Error" })
